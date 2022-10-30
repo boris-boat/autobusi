@@ -6,11 +6,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./autobus.component.scss']
 })
 export class AutobusComponent implements OnInit {
+  private outputText: string = "za sada nista"
   constructor() { }
   @Input() test: string = ""
   @Output() output = new EventEmitter<string>();
   ngOnInit(): void {
-    this.output.emit("hello from child again")
+    this.output.emit(this.outputText)
   }
-
 }

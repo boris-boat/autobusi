@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AutobusComponent } from '../autobus/autobus.component';
+import autobusi from "../timetable"
 
 @Component({
   selector: 'app-homepage',
@@ -11,9 +11,11 @@ export class HomepageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(autobusi);
   }
   test: string = "testiramo input"
   printaj(item: any) {
     console.log(item);
+
   }
 }
