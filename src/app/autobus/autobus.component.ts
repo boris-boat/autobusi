@@ -10,7 +10,7 @@ export class AutobusComponent implements OnInit {
   @Input() test: string = ""
   @Output() output = new EventEmitter<string>();
   ngOnInit(): void {
-    this.output.emit("hello from child")
+    this.output.emit("hello from child again")
   }
 
 }
