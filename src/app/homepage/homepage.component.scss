@@ -1,8 +1,11 @@
 .button-wrapper {
-  width: 100%;
+  width: 50%;
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
+  #danselekt{
+    width: 40%;
+  }
 }
 .app-wrapper {
   padding-top: 20px;
@@ -31,4 +34,9 @@
   .autobus {
     width: 80%;
   }
+  .button-wrapper {
+    width: 70%;
+  #danselekt{
+  width: 40%;
+  }}
 }

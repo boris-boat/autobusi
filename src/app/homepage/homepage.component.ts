@@ -15,9 +15,15 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.autobusiZaDisplay = autobusi
+    this.setFilter(this.dan(new Date().getDay()))
+  }
+
+  selekt(e:any){
+    this.setFilter(e.target.value)
   }
   setFilter(filter: string):void {
     for (let i in this.autobusiZaDisplay) {
+      
       this.autobusiZaDisplay[i].focusDan = this.autobusiZaDisplay[i][filter]
     }
   }
