@@ -1,6 +1,32 @@
-<div class="button-wrapper">
-  <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-primary">Primary</button>
+<div class="app-wrapper">
+  <div class="button-wrapper">
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="setFilter('radniDan')"
+    >
+      Radni dan
+    </button>
+    <button type="button" class="btn btn-primary" (click)="setFilter('subota')">
+      Subota
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="setFilter('nedelja')"
+    >
+      Nedelja
+    </button>
+    <button type="button" class="btn btn-primary" (click)="next30Mins()">Sl.30 minuta</button>
+  </div>
+  <div class="autobus card" *ngFor="let bus of autobusiZaDisplay">
+    <h3 *ngFor="let item of bus.focusDan" class="termin">
+      <p>
+        {{ bus.ime }}
+      </p>
+      <p>
+        {{ item }}
+      </p>
+    </h3>
+  </div>
 </div>
