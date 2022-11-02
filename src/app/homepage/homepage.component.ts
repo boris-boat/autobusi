@@ -22,7 +22,7 @@ export class HomepageComponent implements OnInit {
     }
   }
   next30Mins():void{
-    this.setFilter(this.dan(1))
+    this.setFilter(this.dan(new Date().getDay()))
     let datum = `${new Date().getMonth()+1}.${new Date().getDate()}.${new Date().getFullYear()}`
     let current = moment(new Date())  
     for (let i in this.autobusiZaDisplay) {
