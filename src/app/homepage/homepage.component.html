@@ -1,25 +1,39 @@
 <div class="app-wrapper">
-  
   <div class="button-wrapper">
-   <select name="dan" id="danselekt" (change)="selekt($event)">
+    <select name="dan" id="danselekt" (change)="selekt($event)" *ngIf="!next30">
       <option value="radniDan">Radni Dan</option>
       <option value="subota">Subota</option>
       <option value="nedelja">Nedelja</option>
-  </select>
-    <button type="button" class="btn btn-primary" (click)="next30Mins()">Sl.30 minuta</button>
-
+    </select>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="next30Mins()"
+      *ngIf="!next30"
+    >
+      Sl.30 minuta
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      *ngIf="next30"
+      (click)="back()"
+    >
+      Nazad
+    </button>
   </div>
-  <ng-container *ngFor="let bus of autobusiZaDisplay"> 
-    <div class="autobus card"  >
-    <h3 *ngFor="let item of bus.focusDan" class="termin">
-      <p>
-        {{ bus.ime }}
-      </p>
-      <p>
-        {{ item }}
-      </p>
-    </h3>
-  </div>
-</ng-container>
- 
+  <ng-container *ngFor="let bus of autobusiZaDisplay">
+    <ng-container *ngIf="bus.focusDan.length">
+      <div class="autobus card">
+        <h3 *ngFor="let item of bus.focusDan" class="termin">
+          <p>
+            {{ bus.ime }}
+          </p>
+          <p>
+            {{ item }}
+          </p>
+        </h3>
+      </div>
+    </ng-container>
+  </ng-container>
 </div>
